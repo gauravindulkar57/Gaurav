@@ -1,0 +1,85 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+#hero{
+    background-color: rgba(15, 15, 15, 0.13); /*CSS FOR LANDING PAGE*/
+    border-radius: 0px 0px 150px 0px;
+    margin-top: -20px;
+}
+
+#btn{ 
+    background-color: #FE7A00; /*CSS FOR LANDING PAGE BUTTON*/
+}
+
+#navbtn{ 
+    background-color: #FE7A00; /*CSS FOR NAVBAR BUTTON*/
+}
+
+#navimg{
+    size: 3px; 					/*CSS FOR NAVBAR LOGO STYLING*/
+    max-width: 10%;
+      height: 8%;
+}
+
+/*#navbar{
+    background-color: rgba(15, 15, 15, 0.13);
+}*/
+
+#rectangle{                 /*CSS FOR RECTANGLE AFTER OUR EXPERTIES SECTION*/
+    /* position: absolute;*/
+    width: 80%;
+    height: 36px;
+    left: 192px;
+    top: 2236px;
+    background: #FE7A00;
+    margin-bottom: -20px;
+}
+
+#rectangle01{                 /*CSS FOR RECTANGLE AFTER OUR EXPERTIES SECTION*/
+    /* position: absolute;*/
+    width: 100%;
+    height: 3px;
+    left: 192px;
+    top: 2236px;
+    background: #FE7A00;
+    margin-top: 20px;
+}
+
+#expertsection{
+    margin-bottom: 50px;
+}
+
+.change-my-color{
+    fill: #FE7A00;
+}
+
+#services{
+    padding: 20px;
+}
+
+#footerimg{
+    size: 20px; 					/*CSS FOR FOOTER SECTION LOGO STYLING*/
+    max-width: 40%;
+      height: 20%;
+}
+
+#footer01{
+    background-color: #DDE9DE; /*CSS FOR LANDING PAGE*/
+   /* border-radius: 0px 0px 150px 0px;
+    margin-top: -20px;*/
+}
+
+#additionalp{
+margin-top: -90px;
+}
+
+
+
+/*CONTACT PAGE CSS*/
+
+#contactbtn{
+    background-color: #FE7A00;
+}
+
+

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="To get service of front-end development, Instructional designer, and UI/UX designs. This website is a brief introduction to myself and my technical abilities.">
+    <title>Gaurav-indulkar/main-page</title>
+	<link rel="icon" type="image/x-icon" href="stock-vector-letter-g-logo-icon-design-alphabet-letter-stylish-colorful-typographic-template-elements-274655339-removebg-preview.png">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!--AOS LINK-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><!--AOS JS LINK-->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><!--Sweet Alert CDN-->
+
+<style>
+	   #loading{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff url(loader.gif) no-repeat center;
+        z-index: 99999;
+      }
+
+	  html {
+	scroll-behavior: smooth;
+  }
+</style>
+	
+</head>
+<body onload="myFunction()">
+	<div id="loading"></div>
+
+	<!--NAVBAR-->
+	<nav id="navbar" class="sticky top-0 z-50 relative px-4 py-2 flex justify-between items-center bg-gray-200">
+		<a class="text-3xl font-bold leading-none" href="#">
+			<img id="navimg"
+			src="stock-vector-letter-g-logo-icon-design-alphabet-letter-stylish-colorful-typographic-template-elements-274655339-removebg-preview.png"
+			class="max-w-sm p-1"
+			alt="personal.logo.icon" />
+		</a>
+		<div class="lg:hidden">
+			<button id="hanburger" class="navbar-burger flex items-center text-green-900 p-3">
+				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Responsive navbar</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div>
+		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+			<li><a class="text-sm text-gray-500 hover:text-green-900" href="#"><b>Home</b></a></li>
+			<!--<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg> -->
+			</li>
+			<li><a class="text-sm text-gray-500 hover:text-green-900" href="#about"><b>About Us</b></a></li>
+			<!--<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg> -->
+			</li>
+			<li><a class="text-sm text-gray-500 hover:text-green-900" href="#"><b>Services</b></a></li>
+			<!-- <li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg> -->
+			</li>
+			<li><a class="text-sm text-gray-500 hover:text-green-900" href="#"><b>Pricing</b></a></li>
+			<!-- <li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg> -->
+			</li>
+			<li><a class="text-sm text-gray-500 hover:text-green-900" href="contact.html"><b>Contact</b></a></li>
+		</ul>
+		<!--<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="#">Sign In</a>-->
+		<a id="navbtn" class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#additional">Let's Start</a>
+	</nav>
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<a class="mr-auto text-3xl font-bold leading-none" href="#">
+					<!--<svg class="h-12" alt="logo" viewBox="0 0 10240 10240">
+				        <path xmlns="http://www.w3.org/2000/svg" d="M8284 9162 c-2 -207 -55 -427 -161 -667 -147 -333 -404 -644 -733 -886 -81 -59 -247 -169 -256 -169 -3 0 -18 -9 -34 -20 -26 -19 -344 -180 -354 -180 -3 0 -29 -11 -58 -24 -227 -101 -642 -225 -973 -290 -125 -25 -397 -70 -480 -80 -22 -3 -76 -9 -120 -15 -100 -13 -142 -17 -357 -36 -29 -2 -98 -7 -153 -10 -267 -15 -436 -28 -525 -40 -14 -2 -45 -7 -70 -10 -59 -8 -99 -14 -130 -20 -14 -3 -41 -7 -60 -11 -19 -3 -39 -7 -45 -8 -5 -2 -28 -6 -50 -10 -234 -45 -617 -165 -822 -257 -23 -10 -45 -19 -48 -19 -7 0 -284 -138 -340 -170 -631 -355 -1107 -842 -1402 -1432 -159 -320 -251 -633 -308 -1056 -26 -190 -27 -635 -1 -832 3 -19 7 -59 10 -89 4 -30 11 -84 17 -120 6 -36 12 -77 14 -91 7 -43 33 -174 39 -190 3 -8 7 -28 9 -45 6 -35 52 -221 72 -285 7 -25 23 -79 35 -120 29 -99 118 -283 189 -389 67 -103 203 -244 286 -298 75 -49 178 -103 196 -103 16 0 27 16 77 110 124 231 304 529 485 800 82 124 153 227 157 230 3 3 28 36 54 74 116 167 384 497 546 671 148 160 448 450 560 542 14 12 54 45 90 75 88 73 219 172 313 238 42 29 77 57 77 62 0 5 -13 34 -29 66 -69 137 -149 405 -181 602 -7 41 -14 82 -15 90 -1 8 -6 46 -10 83 -3 37 -8 77 -10 88 -2 11 -7 65 -11 122 -3 56 -8 104 -9 107 -2 3 0 12 5 19 6 10 10 8 15 -10 10 -34 167 -346 228 -454 118 -210 319 -515 340 -515 4 0 40 18 80 40 230 128 521 255 787 343 118 40 336 102 395 113 28 5 53 11 105 23 25 5 59 12 75 15 17 3 41 8 55 11 34 7 274 43 335 50 152 18 372 29 565 29 194 0 481 -11 489 -19 2 -3 -3 -6 -12 -6 -9 -1 -20 -2 -24 -3 -33 -8 -73 -16 -98 -21 -61 -10 -264 -56 -390 -90 -649 -170 -1243 -437 -1770 -794 -60 -41 -121 -82 -134 -93 l-24 -18 124 -59 c109 -52 282 -116 404 -149 92 -26 192 -51 220 -55 17 -3 64 -12 105 -21 71 -14 151 -28 230 -41 19 -3 46 -7 60 -10 14 -2 45 -7 70 -10 25 -4 56 -8 70 -10 14 -2 53 -7 88 -10 35 -4 71 -8 81 -10 10 -2 51 -6 92 -9 101 -9 141 -14 147 -21 3 -3 -15 -5 -39 -6 -24 0 -52 -2 -62 -4 -21 -4 -139 -12 -307 -22 -242 -14 -700 -7 -880 13 -41 4 -187 27 -250 39 -125 23 -274 68 -373 111 -43 19 -81 34 -86 34 -4 0 -16 -8 -27 -17 -10 -10 -37 -33 -59 -52 -166 -141 -422 -395 -592 -586 -228 -257 -536 -672 -688 -925 -21 -36 -43 -66 -47 -68 -4 -2 -8 -7 -8 -11 0 -5 -24 -48 -54 -97 -156 -261 -493 -915 -480 -935 2 -3 47 -21 101 -38 54 -18 107 -36 118 -41 58 -25 458 -138 640 -181 118 -27 126 -29 155 -35 14 -2 45 -9 70 -14 66 -15 137 -28 300 -55 37 -7 248 -33 305 -39 28 -3 84 -9 125 -13 163 -16 792 -8 913 12 12 2 58 9 102 15 248 35 423 76 665 157 58 19 134 46 170 60 86 33 344 156 348 166 2 4 8 7 13 7 14 0 205 116 303 184 180 126 287 216 466 396 282 281 511 593 775 1055 43 75 178 347 225 455 100 227 236 602 286 790 59 220 95 364 120 485 6 28 45 245 50 275 2 14 7 41 10 60 3 19 8 49 10 65 2 17 6 46 9 65 15 100 35 262 40 335 3 39 8 89 10 112 22 225 33 803 21 1043 -3 41 -7 129 -11 195 -3 66 -8 136 -10 155 -2 19 -6 76 -10 125 -3 50 -8 101 -10 115 -2 14 -6 57 -10 95 -7 72 -12 113 -20 175 -2 19 -7 55 -10 80 -6 46 -43 295 -51 340 -2 14 -9 54 -15 90 -5 36 -16 97 -24 135 -8 39 -17 84 -20 100 -12 68 -18 97 -50 248 -19 87 -47 204 -61 260 -14 56 -27 109 -29 117 -30 147 -232 810 -253 832 -4 4 -7 -23 -8 -60z"></path>
+			        </svg>-->
+				</a>
+				<button class="navbar-close">
+					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-orange-50 hover:text-green-900 rounded" href="#">Home</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-orange-50 hover:text-green-900 rounded" href="#">About Us</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-orange-50 hover:text-green-900 rounded" href="#">Services</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-orange-50 hover:text-green-900 rounded" href="#">Pricing</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-orange-50 hover:text-green-900 rounded" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		<!--	<div class="mt-auto">
+				<div class="pt-6">
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">Sign in</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">Sign Up</a>
+				</div>-->
+				<p class="my-4 text-xs text-center text-gray-400">
+					<span>Copyright © 2023</span>
+				</p>
+			</div>
+		</nav>
+	</div>
+
+    <!--HERO SECTION-->
+    <section id="hero" class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-10 py-20 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+			<!--<div class="h-1 w-20 bg-orange-500 rounded"></div>-->
+            <h1 id="#" class="title-font sm:text-4xl text-3xl mb-4 font-medium text-green-900"><b>Gaurav Uday Indulkar</b>
+              <br class="hidden lg:inline-block">Let's Start <br>something big togetger.
+            </h1>
+            <p class="mb-8 leading-relaxed">Front-end Developer / Instructional designer <br>"The Digital Design is Like Penting, Except the Paint that never dries".</p>
+            <div class="flex justify-center">
+              <a id="btn" href="#additional" onclick="Tkalert()" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Let's Explore</a>
+              <!--<button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>-->
+            </div>
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" alt="profile image" src="https://dummyimage.com/720x600">
+          </div>
+        </div>
+      </section>
+
+
+	  <!--SOME ADDITIONAL DETAILS-->
+	  <section id="additional" class="text-gray-600 body-font">
+		<div class="container px-5 py-20 mx-auto">
+		  <!--<div class="flex flex-col text-center w-full mb-20">
+			<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
+			<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+		  </div>-->
+		  <div class="flex flex-wrap -m-4 text-center">
+			<div data-aos="fade-up" class="p-4 md:w-1/4 sm:w-1/2 w-full">
+			  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+				<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-green-900 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+				  <path d="M8 17l4 4 4-4m-4-5v9"></path>
+				  <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
+				</svg>
+				<h2 class="title-font font-medium text-3xl text-green-900"><b>150+</b></h2>
+				<p class="leading-relaxed">Projects</p>
+			  </div>
+			</div>
+			<div data-aos="fade-up" class="p-4 md:w-1/4 sm:w-1/2 w-full">
+			  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+				<svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-green-900 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+				  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+				  <circle cx="9" cy="7" r="4"></circle>
+				  <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+				</svg>
+				<h2 class="title-font font-medium text-3xl text-green-900"><b>20+</b></h2>
+				<p class="leading-relaxed">Clients</p>
+			  </div>
+			</div>
+			<div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+			  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+				<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">-->
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-900 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+					  </svg>
+					  
+				  <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+				  <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
+				</svg>
+				<h2 class="title-font font-medium text-3xl text-green-900"><b>100+</b></h2>
+				<p class="leading-relaxed">E-Learning Engaging Courses</p>
+			  </div>
+			</div>
+			<div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+			  <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+				<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-green-900 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+				  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+				</svg>
+				<h2 class="title-font font-medium text-3xl text-green-900"><b>2+</b></h2>
+				<p class="leading-relaxed">Years of Experience</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+	  
+
+	  <!--WE ARE EXPERT IN-->
+	  <section id="expertsection" class="text-gray-600 body-font">
+		<div class="container px-5 py-15 mx-auto">
+		  <div class="flex flex-col text-center w-full mb-20">
+			<!--<h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>-->
+			<h1 class="sm:text-3xl text-2xl font-medium title-font text-green-900"><b>Expert In</b></h1>
+		  </div>
+		  <div class="flex flex-wrap -m-4">
+			<div class="p-4 md:w-1/3">
+			  <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+				<div class="flex items-center mb-3">
+				  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-orange-500 text-white flex-shrink-0">
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+						<h1>01</h1>
+					  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+					</svg>
+				  </div>
+				  <h2 class="text-green-900 text-lg title-font font-medium"><b>UI/UX Designs</b></h2>
+				</div>
+				<div class="flex-grow">
+				  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+				  <div id="rectangle01" class="box-content mx-auto md:box-content ...">
+					<!-- ... -->
+				  </div>
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+					  <path d="M5 12h14M12 5l7 7-7 7"></path>
+					</svg>-->
+				  </a>
+				</div>
+			  </div>
+			</div>
+			<div class="p-4 md:w-1/3">
+			  <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+				<div class="flex items-center mb-3">
+				  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-orange-500 text-white flex-shrink-0">
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+						<h1>02</h1>
+					  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+					  <circle cx="12" cy="7" r="4"></circle>
+					</svg>
+				  </div>
+				  <h2 class="text-green-900 text-lg title-font font-medium"><b>Instructional Design</b></h2>
+				</div>
+				<div class="flex-grow">
+				  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+				  <div id="rectangle01" class="box-content mx-auto md:box-content ...">
+					<!-- ... -->
+				  </div>
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+					  <path d="M5 12h14M12 5l7 7-7 7"></path>
+					</svg>-->
+				  </a>
+				</div>
+			  </div>
+			</div>
+			<div class="p-4 md:w-1/3">
+			  <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+				<div class="flex items-center mb-3">
+				  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-orange-500 text-white flex-shrink-0">
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">-->
+						<h1>03</h1>
+					  <circle cx="6" cy="6" r="3"></circle>
+					  <circle cx="6" cy="18" r="3"></circle>
+					  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+					</svg>
+				  </div>
+				  <h2 class="text-green-900 text-lg title-font font-medium"><b>Front-end Development</b></h2>
+				</div>
+				<div class="flex-grow">
+				  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+				  <div id="rectangle01" class="box-content mx-auto md:box-content ...">
+					<!-- ... -->
+				  </div>
+					<!--<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+					  <path d="M5 12h14M12 5l7 7-7 7"></path>
+					</svg>-->
+				  </a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+    
+	  <!--ADDITIONAL ORANGE COLOURED RECTANGELE. JUST FOR STYLNG-->
+	  <!--<div id="rectangle" class="box-content mx-auto md:box-content ...">
+		<!-- ... -->
+	  <!--</div>
+
+
+	  <!--ABOUT SECTION-->
+	  <section id="about" class="text-gray-600 body-font">
+		<div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+		  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+			<img class="object-cover object-center rounded" alt="about image" src="abackground imagefor about section.png">
+		  </div>
+		  <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+			<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-green-900"><b>About Myself &
+			  <br class="hidden lg:inline-block">my creative abilities</b>
+			</h1>
+			<p class="mb-8 leading-relaxed">A young man who enjoys learning about new technologies and developing visually appealing user interfaces. In order to meet your business's processes and requirements. Experience as an<b> Instructional Designer and Front-end Developer</b> for at least two years.</p>
+			<ul>
+					<b>-</b> Having 2+ years of experience as a Instructional Designer.<br>
+					- Create interactiev engaging e-learning courses
+					- Having 1+ year of experience as a front-end developer as a freelancer with 20+ clients across mumbai.<br>
+					- Great Understanding of customer requirements.<br>
+					- Provide Cost effective and timely delivered soltions.<br>
+					- Provide Website redesign/mentainance service.
+			</ul>
+			<!--<div class="flex justify-center">
+			  <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+			  <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+			</div>-->
+		  </div>
+		</div>
+	  </section>
+
+	   <!--ADDITIONAL ORANGE COLOURED RECTANGELE. JUST FOR STYLNG-->
+	   <div id="rectangle" class="box-content mx-auto md:box-content ...">
+		<!-- ... -->
+	  </div>
+	  
+
+
+	  <!--SERVICES-->
+	  <section id="services" class="text-gray-600 body-font">
+		<div class="container px-5 py-24 mx-auto">
+		  <div class="flex flex-wrap w-full mb-20">
+			<div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+			  <h1 class="sm:text-4xl text-3xl font-medium title-font mb-4 text-green-900"><b>Services that lead the <br> way to better  <br>
+				business</b>
+			  </h1>
+			  <div class="h-1 w-20 bg-orange-500 rounded"></div>
+			</div>
+			<p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+		  </div>
+		  <div class="flex flex-wrap -m-4">
+			<div id="hover" class="xl:w-1/4 md:w-1/2 p-4">
+			  <div class="bg-gray-100 p-6 rounded-lg">
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="front-end-development-services.png" alt="front-end development">
+				<!--<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>-->
+				<h2 class="text-lg text-green-900 font-medium title-font mb-4"><b>Front-end development</b></h2>
+				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				<div id="rectangle01" class="box-content mx-auto md:box-content ..."></div>
+			  
+			  </div>
+			</div>
+			<div class="xl:w-1/4 md:w-1/2 p-4">
+			  <div class="bg-gray-100 p-6 rounded-lg">
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="UI UX designs 02.png" alt="ui/ux designs">
+				<!--<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>-->
+				<h2 class="text-lg text-green-900 font-medium title-font mb-4"><b>UI/UX Designs</b></h2>
+				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+
+				<div id="rectangle01" class="box-content mx-auto md:box-content ..."></div>
+
+			  </div>
+			</div>
+			<div class="xl:w-1/4 md:w-1/2 p-4">
+			  <div class="bg-gray-100 p-6 rounded-lg">
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="elearning-design-theories-create-effective-courses-removebg-preview.png" alt="Instructional Designer">
+			<!--	<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>-->
+				<h2 class="text-lg text-green-900 font-medium title-font mb-4"><b>E-Learning Development</b></h2>
+				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+
+				<div id="rectangle01" class="box-content mx-auto md:box-content ..."></div>
+
+			  </div>
+			</div>
+			<div class="xl:w-1/4 md:w-1/2 p-4">
+			  <div class="bg-gray-100 p-6 rounded-lg">
+				<img class="h-40 rounded w-full object-cover object-center mb-6" src="website-maintenance-twitter-removebg-preview.png" alt="Website Maintenance">
+				<!--<h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>-->
+				<h2 class="text-lg text-green-900 font-medium title-font mb-4"><b>Website Maintenance</b></h2>
+				<p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+
+				<div id="rectangle01" class="box-content mx-auto md:box-content ..."></div>
+
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <section id="additionalp" class="text-gray-600 body-font"> <!--TESTIMONIAL SECTION-->
+		<div class="container px-5 py-24 mx-auto">
+		  <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-orange-500 mb-8" viewBox="0 0 975.036 975.036">
+			  <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+			</svg>
+			<p class="leading-relaxed text-lg">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware. Man bun next level coloring book skateboard four loko knausgaard. Kitsch keffiyeh master cleanse direct trade indigo juice before they sold out gentrify plaid gastropub normcore XOXO 90's pickled cindigo jean shorts. Slow-carb next level shoindigoitch ethical authentic, yr scenester sriracha forage franzen organic drinking vinegar.</p>
+			<span class="inline-block h-1 w-10 rounded bg-orange-500 mt-8 mb-6"></span>
+			<h2 class="text-green-900 font-medium title-font tracking-wider text-sm"><b>GAURAV U. INDULKAR</b></h2>
+			<p class="text-gray-500">Instructional Designer/Front-end Developer</p>
+		  </div>
+		</div>
+	  </section>
+
+	  <!--FOOTER SECTION-->
+	 <footer id="footer01" class="text-gray-600 body-font">
+		<div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+		  <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+			<!--<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+			  <svg xmlns="stock-vector-letter-g-logo-icon-design-alphabet-letter-stylish-colorful-typographic-template-elements-274655339-removebg-preview.png" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+				<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+			  </svg>-->
+			 <a class="text-3xl font-bold leading-none" href="#">
+				<img id="footerimg"
+				src="gauravindulkar01-removebg-preview_11-removebg-preview.png"
+				class="max-w-sm p-1"
+				alt="personal.logo.icon" />
+			</a>
+			  <span class="ml-3 text-xl"><b>Gaurav U Indulkar</b></span>
+			</a>
+			<p class="mt-2 text-sm text-gray-500">A Creative Front-end Developer and Instructional Designer</p>
+		  </div>
+		  <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+			<div class="lg:w-1/4 md:w-1/2 w-full px-4">
+			  <h2 class="title-font font-medium text-green-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+			  <nav class="list-none mb-10">
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+				</li>
+			  </nav>
+			</div>
+			<div class="lg:w-1/4 md:w-1/2 w-full px-4">
+			  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+			  <nav class="list-none mb-10">
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+				</li>
+			  </nav>
+			</div>
+			<div class="lg:w-1/4 md:w-1/2 w-full px-4">
+			  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+			  <nav class="list-none mb-10">
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+				</li>
+			  </nav>
+			</div>
+			<div class="lg:w-1/4 md:w-1/2 w-full px-4">
+			  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+			  <nav class="list-none mb-10">
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+				</li>
+				<li>
+				  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+				</li>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+		<div id="footer01" class="bg-gray-100">
+		  <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+			<p class="text-gray-500 text-sm text-center sm:text-left">© 2023 Gaurav Uday Indulkar —
+			  <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+			</p>
+			<span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+			  <a href="" class="text-blue-500">
+				<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+				  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+				</svg>
+			  </a>
+			  <a class="ml-3 text-blue-600">
+				<svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+				  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+				</svg>
+			  </a>
+			  <a class="ml-3 text-red-500">
+				<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+				  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+				  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+				</svg>
+			  </a>
+			  <a href="https://www.linkedin.com/in/gaurav-indulkar-9454b0242?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYZMRuzU8SMm6yMyH%2FlmwdQ%3D%3D" class="ml-3 text-blue-700">
+				<svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+				  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+				  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+				</svg>
+			  </a>
+			</span>
+		  </div>
+		</div>
+	  </footer> 
+
+
+
+
+
+
+
+
+
+      <script>
+        // Burger menus
+        document.addEventListener('DOMContentLoaded', function() {
+            // open
+            const burger = document.querySelectorAll('.navbar-burger');
+            const menu = document.querySelectorAll('.navbar-menu');
+        
+            if (burger.length && menu.length) {
+                for (var i = 0; i < burger.length; i++) {
+                    burger[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        
+            // close
+            const close = document.querySelectorAll('.navbar-close');
+            const backdrop = document.querySelectorAll('.navbar-backdrop');
+        
+            if (close.length) {
+                for (var i = 0; i < close.length; i++) {
+                    close[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        
+            if (backdrop.length) {
+                for (var i = 0; i < backdrop.length; i++) {
+                    backdrop[i].addEventListener('click', function() {
+                        for (var j = 0; j < menu.length; j++) {
+                            menu[j].classList.toggle('hidden');
+                        }
+                    });
+                }
+            }
+        });
+        </script>
+
+
+<script>/*AOS JS SCRIPT CODE*/
+	AOS.init();
+  </script>
+
+<script>
+    var preloader = document.getElementById('loading');
+    function myFunction(){
+      preloader.style.display = 'none';
+    }
+  </script>
+
+
+
+<script type="text/javascript">
+	function Tkalert(){
+	  swal("LETS EXPLORE!", "Thank you for your interest in my profile.", "success");
+	}
+	</script>
+
+</body>
+</html>
